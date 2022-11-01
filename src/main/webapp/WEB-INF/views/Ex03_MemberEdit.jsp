@@ -42,79 +42,64 @@
           <!-- side include -->
           
             <div id="layoutSidenav_content">
+             <div id="layoutSidenav_content">
                 <main>
-                    <div class="container-fluid px-4">
-                        <h1 class="mt-4">회원관리 페이지</h1>
-                        <!-- <ol class="breadcrumb mb-4">
-                            <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
-                            <li class="breadcrumb-item active">Tables</li>
-                        </ol> -->
-                        <div class="card mb-4"><!-- 
-                            <div class="card-body">
-                                DataTables is a third party plugin that is used to generate the demo table below. For more information about DataTables, please visit the
-                                <a target="_blank" href="https://datatables.net/">official DataTables documentation</a>
-                                .
-                            </div> -->
-                        </div>
-                        <div class="card mb-4">
-                            <div class="card-body">
-                            <table  style="margin:auto;">
-                        <tr>
-                           <td >
-                              <form action="Ex03_MemberEditok.do" method="post">
-                                 <h3 style="text-align: center;">정보 수정</h3>
-                                 <div>
-                                    <table style="margin:auto;">
-                                       <tr>
-                                          <td>아이디</td>
-                                          <td>
-                                               <input type="text" name="id" value="${member.id}" readonly>
-                                          </td>
-                                       </tr>
-                                       <tr>
-                                          <td>비번</td>
-                                          <td>${member.pwd}</td>
-                                       </tr>
-                                       <tr>
-                                          <td>이름</td>
-                                          <td>
-                                             <input type="text" name="name" value="${member.name}">
-                                          </td>
-                                       </tr>
-                                       <tr>
-                                          <td>나이</td>
-                                          <td>
-                                             <input type="text" name="age" value="${member.age}">
-                                          </td>
-                                       </tr>
-                                       <tr>
-                                          <td>성별</td>
-                                          <td>
-                                             [${member.gender}]
-                                             <input type="radio" name="gender" id="gender" value="여"
-                                             <c:if test="${member.gender} == '여'">checked</c:if>>여
-                                             <input type="radio" name="gender" id="gender" value="남"
-                                             <c:if test="${member.gender} == '남'">checked</c:if>>남
-                                          </td>
-                                       </tr>
-                                       <tr>
-                                          <td>이메일</td>
-                                          <td>
-                                             <input type="text" name="email" value="${member.email}">
-                                          </td>
-                                       </tr>
-                                       <tr>
-                                          <td colspan="2">
-                                          <input type="submit" value="수정하기" class="btn btn-primary">
-                                          <a href='Ex03_Memberlist.do' class="btn btn-primary">리스트이동</a></td>
-                                    </table>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-7">
+                                <div class="card shadow-lg border-0 rounded-lg mt-5">
+                                    <div class="card-header"><h3 class="text-center font-weight-light my-4">회원정보 수정</h3></div>
+                                    <div class="card-body">
+                                        <form action="Ex03_MemberEditok.do" method="post"">
+                                              <div class="row mb-3">
+                                                <div class="col-md-6">
+                                                    <div class="form-floating mb-3 mb-md-0">
+                                                        <input type="text" class="form-control" id="id" name="id" type="text"  value="${member.id}" readonly />
+                                                        <label for="inputFirstName">ID</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-floating">
+                                                        <input type="password" name="pwd" id="pwd" class="form-control" value="${member.pwd}" readonly />
+                                                        <label for="pwd">password</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-floating mb-3">
+                                                <input type="text" name="email" id="email" class="form-control" value="${member.email}"/>
+                                                <label for="inputEmail">Email address</label>
+                                            </div>
+                                            
+                                              <div class="row mb-3">
+                                               <div class="col-md-6">
+                                                   <div class="form-floating mb-3 mb-md-0">
+                                                       <input type="text" name="name" id="name" class="form-control" value="${member.name}"/>
+                                                       <label for="name">name</label>
+                                                   </div>
+                                               </div>
+                                             
+                                                <div class="col-md-6">
+                                                    <div class="form-floating mb-3 mb-md-0">
+                                                        <input type="text" name="age" id="age" maxlength="3"  class="form-control" value="${member.age}"/>
+                                                        <label for="age">age</label>
+                                                    </div>
+                                                </div>
+                                           		</div>
+                                                
+                                                <div class="col-md-6">
+                                                    <div class="form-floating mb-3 mb-md-0">
+                                                        여 : <input type="radio" class="form" name="gender" id="gender" value="여" <c:if test="${member.gender == '여 '}">checked</c:if>><br>
+                                             			남 : <input type="radio" class="form" name="gender" id="gender" value="남" <c:if test="${member.gender == '남 '}">checked</c:if>>
+                                                    </div>
+                                                </div>
+                                            <div class="mt-4 mb-0">
+                                                <div class="d-grid"><input type="submit" value="수정하기" class="btn btn-primary btn-block"></div>
+                                          </div>
+
+                                    <div class="card-footer text-center py-3">
+                                        <div class="d-grid"><input type="button" value="리스트로 돌아가기" onClick="location.href='Ex03_Memberlist.do'" class="btn btn-primary2 btn-block"></div>
                                     </div>
-                                 </div>
-                                 </div>
-                              </form>
-                           </td>
-                        </tr>
-                     </table>
+                                </div>
                             </div>
                         </div>
                     </div>

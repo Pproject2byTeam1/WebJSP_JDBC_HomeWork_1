@@ -57,7 +57,7 @@ public class FrontRegisterController extends HttpServlet {
          } else {
             if (member.getPwd().equals(pwd)) { // 아이디 존재, pwd(o)
                session.setAttribute("member", member);
-               viewpage = "Ex02_JDBC_Main.jsp";
+               viewpage = "/WEB-INF/views/Ex02_JDBC_Main.jsp";
             } else {// 아이디 존재, pwd(x)
                viewpage = "/WEB-INF/views/Ex02_JDBC_Login.jsp";
             }
@@ -226,7 +226,11 @@ public class FrontRegisterController extends HttpServlet {
          }
          request.setAttribute("delete", resultdata);
          viewpage = "/WEB-INF/views/Ex03_Memberlist.jsp";
-      }
+         
+      }  else if (urlcommand.equals("/Main.do")) {
+
+          viewpage = "/WEB-INF/views/Ex02_JDBC_Main.jsp";
+       }
 
       // 5. view 지정하기
       RequestDispatcher dis = request.getRequestDispatcher(viewpage);
@@ -235,6 +239,8 @@ public class FrontRegisterController extends HttpServlet {
       dis.forward(request, response);
 
    }
+
+
 
    protected void doGet(HttpServletRequest request, HttpServletResponse response)
          throws ServletException, IOException {
