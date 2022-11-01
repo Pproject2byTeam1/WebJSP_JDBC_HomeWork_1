@@ -89,15 +89,17 @@
                                                 <div class="col-md-6">
                                                     <div class="form-floating mb-3 mb-md-0">
                                                         여 : <input type="radio" class="form" name="gender" id="gender" value="여" <c:if test="${member.gender == '여 '}">checked</c:if>><br>
-                                             			남 : <input type="radio" class="form" name="gender" id="gender" value="남" <c:if test="${member.gender == '남 '}">checked</c:if>>
+                                             			남 : <input type="radio" class="form" name="gender" id="gender" value="남" <c:if test="${member.gender == '남 '}">checked</c:if>><br>
                                                     </div>
                                                 </div>
-                                            <div class="mt-4 mb-0">
+                                                <br>
+                                          <div class="row mb-3">
+                                            <div class="col-md-6">
                                                 <div class="d-grid"><input type="submit" value="수정하기" class="btn btn-primary btn-block"></div>
                                           </div>
 
-                                    <div class="card-footer text-center py-3">
-                                        <div class="d-grid"><input type="button" value="리스트로 돌아가기" onClick="location.href='Ex03_Memberlist.do'" class="btn btn-primary2 btn-block"></div>
+                                    <div class="col-md-6">
+                                        <div class="d-grid"><input type="button" class="btn btn-primary" style="background-color: red" value="리스트로 돌아가기" onClick="location.href='Ex03_Memberlist.do'" class="btn btn-primary2 btn-block"></div>
                                     </div>
                                 </div>
                             </div>
